@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AccountController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Login');
 });
+Route::get('/test', [AccountController::class, 'index']);
+Route::get('/test', [AccountController::class, 'create']);
+Route::post('/store', [AccountController::class, 'store']);
+Route::get('/Signin',function(){return view('Signin'); });
+
+
+
